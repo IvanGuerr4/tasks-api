@@ -18,7 +18,7 @@ export const AppDataSource = new DataSource({
   cambios al momento, lo utilicé al ser entorno local ya que 
   para entornos de producción entiendo que la mejor práctica
   son utilizar migraciones */
-  synchronize: true,//process.env.NODE_ENV !== 'production',
+  synchronize: process.env.NODE_ENV !== 'production',
   logging: process.env.NODE_ENV === 'development',
   entities: [User, Task],
   charset: 'utf8mb4',
